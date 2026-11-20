@@ -1,0 +1,50 @@
+.ide-code-navigation { display: flex; align-items: center; gap: 3px; min-height: 33px; padding: 0 8px; border-bottom: 1px solid var(--ide-border); color: var(--ide-muted); background: var(--ide-bg); font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-code-navigation .ide-icon-button { width: 25px; height: 25px; }
+.ide-code-navigation button:disabled { opacity: .35; }
+.ide-code-navigation .ide-code-search { display: flex; align-items: center; gap: 7px; min-width: 0; padding: 4px 7px; }
+.ide-code-search svg, .ide-code-problems svg { width: 14px; height: 14px; }
+.ide-code-search kbd { margin-left: 12px; color: var(--ide-muted); font: inherit; opacity: .7; }
+.ide-code-search > span { overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.ide-code-navigation .ide-code-problems { display: inline-flex; align-items: center; gap: 5px; }
+.ide-code-notice { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0; padding: 8px 12px; font-size: calc(12px * var(--interface-font-scale, 1)); overflow-wrap: anywhere; }
+.ide-code-search-dialog { width: min(660px, calc(100vw - 40px)); }
+.ide-code-search-dialog .ide-dialog-body { padding: 0; }
+.ide-code-search-dialog .ide-panel-title { border-bottom: 1px solid var(--ide-border); }
+.ide-code-search-dialog .ide-search-input { padding: 8px 14px; border-color: var(--ide-border); }
+.ide-code-search-dialog .ide-search-input input { flex: 1; min-width: 0; }
+.ide-code-search-results { max-height: min(52dvh, 460px); overflow: auto; min-height: 100px; padding: 5px 0; }
+.ide-code-search-results .ide-search-result { border-radius: 4px; gap: 9px; padding: 8px 12px; }
+.ide-code-search-results .ide-search-result > span:nth-child(2) { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.ide-search-result strong, .ide-search-result small { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 400; }
+.ide-code-search-results .ide-search-result > span:last-child { flex-shrink: 0; font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-code-search-dialog .ide-search-footer { margin-top: 0; gap: 15px; border-top: 1px solid var(--ide-border); background: var(--ide-panel); }
+.ide-code-targets-dialog { width: min(900px, calc(100vw / var(--appearance-scale, 1) - 32px)); max-height: calc(100dvh / var(--appearance-scale, 1) - 24px); }
+.ide-code-targets-dialog::backdrop { background: transparent; }
+.ide-code-targets-dialog .ide-code-search-results { min-height: 0; max-height: min(36dvh, 320px); }
+.ide-code-targets-dialog .ide-search-result { display: grid; grid-template-columns: 16px minmax(90px, 150px) 34px minmax(0, 1fr); gap: 10px; padding: 6px 10px; }
+.ide-code-targets-dialog .ide-code-target-file, .ide-code-targets-dialog code { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ide-code-targets-dialog .ide-code-search-results .ide-search-result > .ide-code-target-file { display: block; min-width: 0; }
+.ide-code-targets-dialog .ide-code-target-line { color: var(--ide-muted); text-align: right; font-variant-numeric: tabular-nums; }
+.ide-code-targets-dialog code { color: var(--ide-text); font: calc(12px * var(--interface-font-scale, 1)) var(--font-editor, ui-monospace, monospace); }
+.ide-dependency-notice { display: flex; align-items: center; gap: 6px; padding: 5px 12px; color: var(--ide-muted); font-size: calc(11px * var(--interface-font-scale, 1)); border-bottom: 1px solid var(--ide-border); }
+.ide-dependency-notice svg { width: 13px; height: 13px; }
+.ide-rename-dialog { width: min(500px, calc(100vw - 40px)); }
+.ide-rename-dialog.has-preview { width: min(1100px, calc(100vw - 40px)); }
+.ide-rename-name { display: flex; align-items: center; gap: 12px; font-size: calc(12px * var(--interface-font-scale, 1)); }
+.ide-rename-name input { flex: 1; min-width: 0; padding: 7px 10px; border: 1px solid #555963; background: var(--ide-bg); }
+.ide-rename-summary { padding: 12px 0; color: var(--ide-muted); font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-rename-preview { display: grid; grid-template-columns: minmax(140px, 23%) minmax(0, 1fr); height: min(50dvh, 450px); border: 1px solid #45474e; border-radius: 4px; overflow: hidden; }
+.ide-rename-files { overflow: auto; background: var(--ide-bg); border-right: 1px solid #45474e; }
+.ide-app .ide-rename-files button { display: flex; align-items: center; gap: 7px; width: 100%; text-align: left; padding: 9px; border-radius: 0; font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-rename-files span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ide-rename-code { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.ide-rename-labels { display: grid; grid-template-columns: 1fr 1fr; padding: 5px 12px; color: var(--ide-muted); border-bottom: 1px solid #45474e; font-size: calc(10px * var(--interface-font-scale, 1)); }
+.ide-rename-preview .comparison { min-width: 0; min-height: 0; flex: 1; overflow: hidden; }
+.ide-rename-preview .comparison .cm-mergeView { height: 100%; border: 0; }
+.ide-rename-preview .comparison .cm-mergeViewEditors, .ide-rename-preview .comparison .cm-editor { min-height: 100%; }
+.ide-rename-actions { display: flex; justify-content: flex-end; gap: 8px; padding-top: 18px; }
+.ide-app .ide-rename-actions .primary { background: #5269a8; color: #fff; padding: 7px 12px; }
+.ide-editor-body .cm-tooltip { background: var(--editor-panel-background, var(--ide-panel)); color: var(--editor-panel-foreground, var(--ide-text)); border-color: var(--editor-panel-border, #45474e); font-size: calc(12px * var(--interface-font-scale, 1)); }
+.ide-editor-body .cm-tooltip-autocomplete > ul > li[aria-selected] { background: #35415f; color: var(--ide-text); }
+.ide-editor-body .cm-tooltip .cm-lsp-documentation { max-width: min(600px, 70vw); max-height: 300px; overflow: auto; line-height: 1.5; }
+@media (max-width: 800px) { .ide-code-search kbd, .ide-code-navigation > small { display: none; } .ide-code-search > span { max-width: 160px; } .ide-rename-preview { grid-template-columns: minmax(100px, 25%) minmax(0, 1fr); } }

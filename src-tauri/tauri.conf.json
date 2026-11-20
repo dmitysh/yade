@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Yade",
+  "version": "0.1.0",
+  "identifier": "dev.yade.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build && npm run desktop:runtime",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [{ "title": "Yade", "width": 1200, "height": 800, "minWidth": 800, "minHeight": 560 }],
+    "security": {
+      "csp": "default-src 'self'; style-src 'self' 'unsafe-inline'; connect-src ipc: http://ipc.localhost"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["app"],
+    "resources": { "resources/": "" },
+    "icon": ["icons/icon.png"],
+    "macOS": { "minimumSystemVersion": "13.5", "signingIdentity": "-" }
+  }
+}

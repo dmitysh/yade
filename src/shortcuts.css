@@ -1,0 +1,25 @@
+.shortcut-toolbar { display: flex; gap: 16px; align-items: center; margin-bottom: 24px; }
+.shortcut-toolbar > label { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; padding: 8px 12px; border: 1px solid #45474e; border-radius: 6px; background: #292a2d; }
+.ide-live .shortcut-toolbar input { width: 100%; min-width: 0; background: transparent; border: 0; padding: 2px; }
+.ide-live .shortcut-toolbar > button, .ide-live .shortcut-conflict button, .ide-live .shortcut-recorder button { padding: 8px 12px; border: 1px solid #45474e; border-radius: 6px; white-space: nowrap; }
+.shortcut-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 16px 0; border-bottom: 1px solid #303238; }
+.shortcut-row .appearance-row-label { min-width: 0; }
+.shortcut-actions { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.ide-live .shortcut-binding { min-width: 118px; padding: 8px 12px; background: #292a2d; border: 1px solid #45474e; border-radius: 6px; }
+.shortcut-settings kbd, .tab-switcher kbd { font-family: inherit; font-size: 12px; }
+.shortcut-recorder { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; max-width: 340px; }
+.ide-live .shortcut-recorder input { min-width: 0; width: 200px; border-color: #b99ae1; }
+.shortcut-recorder .error { flex-basis: 100%; }
+.shortcut-conflict { padding: 16px; margin-bottom: 20px; border: 1px solid #796440; border-radius: 6px; background: #342b1e; }
+.shortcut-conflict p { margin: 0 0 12px; }
+.shortcut-conflict button + button { margin-left: 8px; }
+.ide-dialog.tab-switcher { width: 460px; max-height: 70vh; }
+.tab-switcher-list { display: grid; gap: 4px; max-height: 50vh; overflow: auto; }
+.ide-live .tab-switcher-list button { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 5px; text-align: left; overflow-wrap: anywhere; }
+.ide-live .tab-switcher-list button[aria-selected="true"] { background: #3d314c; color: #e2d3f4; }
+.tab-switcher .muted { margin-top: 12px; }
+@container (max-width: 700px) {
+  .shortcut-row { align-items: flex-start; flex-direction: column; gap: 12px; }
+  .shortcut-actions { max-width: 100%; }
+  .shortcut-toolbar { align-items: stretch; flex-direction: column; }
+}

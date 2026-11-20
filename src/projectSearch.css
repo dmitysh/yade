@@ -1,0 +1,66 @@
+.ide-dialog.ide-project-search-dialog {
+  top: clamp(40px, 12dvh, 130px);
+  bottom: auto;
+  margin: 0 auto;
+  width: min(704px, calc(100vw / var(--appearance-scale, 1) - 34px));
+  max-height: calc(83dvh / var(--appearance-scale, 1));
+  border: 1px solid #45434b;
+  border-radius: 10px;
+  background: #252629;
+  color: var(--ide-text);
+  overflow: hidden;
+}
+.ide-project-search-dialog[open] { display: flex; flex-direction: column; }
+.ide-project-search-dialog .ide-panel-title { flex: 0 0 auto; justify-content: flex-start; gap: 9px; padding: 7px 12px 6px 16px; border: 0; }
+.ide-project-search-dialog .ide-panel-title small { min-width: 0; padding-left: 9px; border-left: 1px solid #494650; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ide-project-search-dialog .ide-panel-title button { margin-left: auto; }
+.ide-project-search-dialog .ide-dialog-body { display: flex; flex-direction: column; min-height: 0; padding: 0; }
+.ide-project-search { display: flex; flex-direction: column; min-height: 0; }
+.ide-project-search-tools { flex-shrink: 0; padding: 0 14px; }
+.ide-app .ide-project-search-field {
+  display: flex; align-items: center; gap: 9px; min-height: 43px; padding: 0 8px 0 12px;
+  border: 1px solid #474650; border-radius: 6px; background: #1c1d20; color: #c5a6f1;
+}
+.ide-app .ide-project-search-tools .ide-project-search-field:focus-within { border-color: var(--ide-accent); outline: none; box-shadow: 0 0 0 1px #a278df33; }
+.ide-app .ide-project-search-field input { flex: 1; min-width: 0; padding: 8px 0; border: 0; outline: none; background: transparent; color: var(--ide-text); font-size: calc(14px * var(--interface-font-scale, 1)); }
+.ide-project-search-field > svg { width: 17px; height: 17px; }
+.ide-project-search-options { display: flex; gap: 2px; padding-left: 5px; border-left: 1px solid #474650; }
+.ide-app .ide-project-search-options button { min-width: 27px; padding: 4px 6px; font: calc(11px * var(--interface-font-scale, 1)) var(--font-editor, ui-monospace, monospace); color: var(--ide-muted); }
+.ide-app .ide-project-search-options button[aria-pressed="true"] { background: #483858; color: #e2cfff; }
+.ide-project-search-filters { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 3px 10px; }
+.ide-project-search-tabs { display: flex; gap: 3px; flex-shrink: 0; }
+.ide-app .ide-project-search-tabs button { position: relative; padding: 10px 9px; border-radius: 0; color: var(--ide-muted); font-size: calc(12px * var(--interface-font-scale, 1)); white-space: nowrap; }
+.ide-app .ide-project-search-tabs button[aria-selected="true"] { color: #e5d4ff; background: transparent; }
+.ide-project-search-tabs button[aria-selected="true"]::after { content: ""; position: absolute; inset: auto 8px -1px; height: 2px; border-radius: 3px; background: var(--ide-accent); }
+.ide-project-search-scope { display: flex; align-items: center; gap: 5px; margin-left: auto; color: var(--ide-muted); }
+.ide-project-search-scope svg { width: 14px; height: 14px; }
+.ide-app .ide-project-search-scope select { width: auto; max-width: 144px; min-width: 0; background: transparent; border: 0; padding: 4px 0; font-size: calc(11px * var(--interface-font-scale, 1)); color: #b7b4c0; cursor: pointer; }
+.ide-project-search-mask { display: flex; align-items: center; gap: 8px; padding: 4px 0 8px; color: var(--ide-muted); font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-app .ide-project-search-mask input { min-width: 80px; width: min(200px, 50%); padding: 4px 7px; font: inherit; }
+
+.ide-project-search-panel { display: flex; flex-direction: column; min-height: 0; border-top: 1px solid #3c3c43; }
+.ide-project-search-results { min-height: 0; height: min(326px, 48dvh); overflow: auto; padding: 6px 8px; background: #242528; scrollbar-width: thin; }
+.ide-project-search-group { padding: 6px 10px 3px; color: var(--ide-muted); font-size: calc(11px * var(--interface-font-scale, 1)); font-weight: 600; }
+.ide-app .ide-project-search-result {
+  display: grid; align-items: center; grid-template-columns: 18px minmax(0, 1fr) minmax(0, auto); gap: 9px;
+  width: 100%; min-height: 30px; padding: 0 8px; border: 1px solid transparent; border-radius: 5px; text-align: left;
+}
+.ide-app .ide-project-search-result[aria-selected="true"] { background: #3c314b; border-color: #584569; }
+.ide-project-search-result > svg { width: 15px; height: 15px; color: #c5a6f1; }
+.ide-project-search-result > span:not(.file-icon), .ide-project-search-result small { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ide-project-search-result > small { max-width: 25vw; text-align: right; }
+.ide-project-search-snippet { font: calc(11px * var(--interface-font-scale, 1)) var(--font-editor, ui-monospace, monospace); }
+.ide-project-search-result mark { color: #e8cfff; font-weight: 700; background: transparent; }
+.ide-project-search-snippet mark { color: #f3dfad; font-weight: inherit; background: #82613d66; border-radius: 2px; }
+.ide-app .ide-project-search-empty { display: grid; place-content: center; min-height: 100%; color: var(--ide-muted); }
+.ide-app .ide-project-search-notice { max-height: 72px; overflow: auto; flex-shrink: 0; padding: 6px 14px; color: #f0b3b6; font-size: calc(11px * var(--interface-font-scale, 1)); overflow-wrap: anywhere; }
+.ide-project-search-footer { display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; min-height: 39px; gap: 10px; padding: 6px 13px; border-top: 1px solid #3c3c43; color: var(--ide-muted); font-size: calc(11px * var(--interface-font-scale, 1)); }
+.ide-project-search-footer > div, .ide-project-search-footer > div > span { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+.ide-project-search-footer > div { gap: 10px; }
+.ide-project-search-footer kbd { border: 1px solid #47464f; border-radius: 4px; padding: 1px 4px; color: #d2cedc; font: calc(10px * var(--interface-font-scale, 1)) var(--font-editor, ui-monospace, monospace); }
+
+@media (max-width: 480px) {
+  .ide-app .ide-project-search-tabs button { padding-inline: 5px; }
+  .ide-project-search-scope svg, .ide-project-search-footer > div > span:first-child { display: none; }
+  .ide-project-search-footer > div { gap: 5px; }
+}

@@ -1,0 +1,6 @@
+{
+  "identifier": "main",
+  "description": "События основного окна и выбор папки проекта",
+  "windows": ["main"],
+  "permissions": ["core:default", "dialog:allow-open"]
+}

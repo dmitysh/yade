@@ -1,0 +1,8 @@
+{
+  "name": "yade-claude-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": "26.8.1" },
+  "dependencies": { "@anthropic-ai/claude-agent-sdk": "0.2.141" }
+}

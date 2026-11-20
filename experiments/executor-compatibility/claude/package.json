@@ -1,0 +1,20 @@
+{
+  "name": "yade-claude-compatibility",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "probe": "node probe.ts",
+    "check": "tsc --noEmit",
+    "test": "node --test probe.test.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "0.2.141"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "typescript": "5.9.3"
+  }
+}
